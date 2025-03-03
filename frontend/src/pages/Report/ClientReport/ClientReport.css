@@ -1,0 +1,398 @@
+  /* Container */
+  .clirep-cont {
+    padding: 20px;
+    width: 100%;
+    max-width: 1160px;
+    margin-left: 215px;
+    margin-top: 5rem;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Top Bar */
+  .clirep-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+  }
+
+  /* Search Box */
+  .clirep-search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .clirep-search-container .clirep-search-box {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    width: 250px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .clirep-search-box:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+
+  /* Filter Container */
+  .clirep-filter-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .filter-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+
+  .filter-icon:hover {
+    background: #e2e6ea;
+  }
+
+  /* Filter Menu */
+  .clirep-filter-menu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 180px; /* Increased width */
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    padding: 5px;
+  }
+
+  .clirep-filter-menu button {
+    background: none;
+    border: none;
+    padding: 10px 19px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    color: black;
+  }
+
+  .clirep-filter-menu button:hover {
+    background: #f0f0f0;
+  }
+
+  /* Download Button */
+  .clirep-download-button {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: background 0.3s ease, transform 0.2s;
+    
+    /* Positioning in the top-right corner */
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+    /* Ensure proper width */
+    width: auto;
+    min-width: 130px;
+    height: 36px;
+  }
+
+  .clirep-download-button:hover {
+    background-color: rgb(175, 5, 175);
+  }
+
+  .clirep-download-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    width: auto;
+    min-width: 130px;
+    height: 36px;
+    top: 10px;
+    right: 20px;
+  }
+
+  .clirep-download-button svg {
+    font-size: 16px;
+  }
+
+  /* Table Container */
+  .clirep-table-container {
+    max-height: 420px; /* Adjust as needed */
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Table */
+  .clirep-client-table {
+    width: 100%;
+    border-collapse: separate; /* Allows for rounded corners */
+    border-spacing: 0; /* Removes space between cells */
+    table-layout: fixed; /* Fixed table layout */
+    background: white;
+    border-radius: 8px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensures rounded corners are visible */
+  }
+
+  /* Header */
+  .clirep-client-table thead {
+    
+    top: 0;
+    background: #ac178e;
+    text-align: center;
+    color: white;
+    z-index: 10;
+  }
+
+  .clirep-client-table th {
+    padding: 12px 15px;
+    
+    /* Increased padding for better spacing */
+    font-size: 1rem;
+    text-transform: uppercase; /* Uppercase headers for emphasis */
+    letter-spacing: 0.05em; /* Slight letter spacing for readability */
+  }
+
+  /* Table Cells */
+  .clirep-client-table td {
+    padding: 5px 10px; /* Decreased padding for other columns */
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    transition: background 0.2s ease; /* Smooth hover effect */
+    word-wrap: break-word; /* Ensure long words break */
+    text-overflow: ellipsis; /* Display ellipsis for overflow */
+    overflow: hidden;
+    white-space: nowrap; /* No wrapping */
+    max-width: 150px; /* Decrease the width of columns */
+  }
+
+  /* Email Column */
+  .clirep-client-table td:nth-child(2) {
+    padding: 10px 15px; /* Maintain padding for Email column */
+    max-width: none; /* Keep Email column wide */
+    white-space: normal; /* Allow wrapping for Email column */
+  }
+
+  /* Alternate row coloring */
+  .clirep-client-table tbody tr:nth-child(even) {
+    background: #f9c1f1;
+  }
+
+  /* Hover effect on rows */
+  .clirep-client-table tbody tr:hover {
+    background: #f0e1ed; /* Light purple hover effect */
+    cursor: pointer; /* Indicates interactivity */
+  }
+
+  /* Paid and Unpaid styling */
+  .paid {
+    color: green;
+    font-weight: bold;
+  }
+
+  .unpaid {
+    color: red;
+    font-weight: bold;
+  }
+
+  /* No data message styling */
+  .clirep-not-found {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .clirep-table-container {
+      border-radius: 0; /* Remove rounded corners on smaller screens */
+    }
+
+    .clirep-client-table th,
+    .clirep-client-table td {
+      padding: 8px 10px; /* Slightly reduce padding for smaller screens */
+    }
+  }
+  /* Date Picker Container */
+  .clirep-date-picker-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Date Picker */
+  .clirep-date-picker {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 180px;
+    font-size: 14px;
+  }
+
+  .clirep-refresh-icon {
+    background-color: transparent;
+    color: purple;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 1000px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .clirep-refresh-icon:hover {
+    background-color: transparent;
+    transform: rotate(180deg);
+  }
+  .clirep-refresh-button svg {
+    font-size: 18px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .cli-report-top-bar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .clirep-search-container {
+      width: 100%;
+    }
+
+    .clirep-search-box {
+      width: 100%;
+    }
+
+    .clirep-download-button {
+      width: 100%;
+    }
+  }
+/* Large Desktop Screens (Above 1440px) */
+@media (min-width: 1440px) {
+  .clirep-cont {
+    max-width: 1200px;
+  }
+}
+
+/* Standard Desktops & PCs (1200px - 1440px) */
+@media (max-width: 1440px) {
+  .clirep-cont {
+    max-width: 1160px;
+  }
+}
+
+/* Laptops & Smaller Desktops (992px - 1200px) */
+@media (max-width: 1200px) {
+  .clirep-cont {
+    max-width: 960px;
+    margin-left: 180px;
+  }
+
+  .clirep-client-table td {
+    max-width: 130px;
+  }
+}
+
+/* Small Laptops & Large Tablets (768px - 992px) */
+@media (max-width: 992px) {
+  .clirep-cont {
+    max-width: 90%;
+    margin-left: 140px;
+  }
+
+  .clirep-client-table td {
+    max-width: 120px;
+  }
+
+  .clirep-filter-menu {
+    width: 150px;
+  }
+
+  .clirep-download-button {
+    position: relative;
+    width: auto;
+  }
+}
+
+/* Tablets & Small Screens (Below 768px) */
+@media (max-width: 768px) {
+  .clirep-cont {
+    margin-left: 0;
+    max-width: 100%;
+    padding: 15px;
+    margin-top: 3rem;
+  }
+
+  .clirep-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .clirep-search-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .clirep-filter-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .clirep-download-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .clirep-table-container {
+    max-height: 300px;
+    overflow-x: auto;
+  }
+
+  .clirep-client-table {
+    width: 100%;
+    table-layout: auto;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .clirep-client-table th,
+  .clirep-client-table td {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+
+  .clirep-refresh-icon {
+    padding: 6px 10px;
+  }
+
+  .clirep-date-picker {
+    width: 100%;
+  }
+}
